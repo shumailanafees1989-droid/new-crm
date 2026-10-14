@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Bright Digital Agency CRM - Main Application Logic
  * Clean, lightweight, fully reactive JavaScript architecture.
  */
@@ -510,7 +510,7 @@ const BrightCRM = {
               <h3 class="team-member-name">${member.name}</h3>
               <span class="team-member-role-badge">${member.role}</span>
               <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 3px;">
-                ${member.department} • <span style="color: var(--success); font-weight: 600;">● ${member.status}</span>
+                ${member.department} &bull; <span style="color: var(--success); font-weight: 600;">&bull; ${member.status}</span>
               </div>
             </div>
           </div>

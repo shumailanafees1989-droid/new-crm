@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Bright Digital Agency CRM - Supabase Database Client & Real-Time Sync
  * Connects CRM frontend seamlessly with Supabase PostgreSQL cloud database.
  * Supports auto-loading credentials from .env, runtime config modal, and local fallback.
@@ -78,11 +78,11 @@ const SupabaseBridge = {
     const fallbackEnv = window.CRM_ENV || {};
 
     const url = (localConfig && localConfig.url) || 
-                (envConfig && envConfig.SUPABASE_URL) || 
+                (envConfig && (envConfig.SUPABASE_URL || envConfig.supabaseUrl)) || 
                 fallbackEnv.SUPABASE_URL || '';
 
     const anonKey = (localConfig && localConfig.anonKey) || 
-                    (envConfig && envConfig.SUPABASE_ANON_KEY) || 
+                    (envConfig && (envConfig.SUPABASE_ANON_KEY || envConfig.supabaseAnonKey)) || 
                     fallbackEnv.SUPABASE_ANON_KEY || '';
 
     this.config.url = url.trim();
