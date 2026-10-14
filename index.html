@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Digital Agency - Modern CRM Dashboard</title>
+  <meta name="description" content="Modern, clean light-themed CRM Dashboard for Bright Digital Agency. Manage Clients, Leads, Projects, Team, and Tasks with ease.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-badge">
+          <div class="brand-logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <span class="brand-title">Bright Agency</span>
+            <span class="brand-subtitle">CRM Suite 2026</span>
+          </div>
+        </div>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="nav-group">
+          <div class="nav-group-label">Navigation</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#dashboard" class="nav-link active" data-page="dashboard" id="nav-dashboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                  <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                  <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                  <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                </svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#clients" class="nav-link" data-page="clients" id="nav-clients">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Clients</span>
+                <span class="nav-badge" id="sidebarClientsBadge">8</span>
+              </a>
+            </li>
+            <li>
+              <a href="#leads" class="nav-link" data-page="leads" id="nav-leads">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <line x1="19" y1="8" x2="19" y2="14"></line>
+                  <line x1="22" y1="11" x2="16" y2="11"></line>
+                </svg>
+                <span>Leads</span>
+                <span class="nav-badge badge-amber" id="sidebarLeadsBadge">9</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="nav-link" data-page="projects" id="nav-projects">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Projects</span>
+                <span class="nav-badge" id="sidebarProjectsBadge">6</span>
+              </a>
+            </li>
+            <li>
+              <a href="#team" class="nav-link" data-page="team" id="nav-team">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <circle cx="19" cy="11" r="3"></circle>
+                </svg>
+                <span>Team</span>
+                <span class="nav-badge" id="sidebarTeamBadge">4</span>
+              </a>
+            </li>
+            <li>
+              <a href="#tasks" class="nav-link" data-page="tasks" id="nav-tasks">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Tasks</span>
+                <span class="nav-badge badge-amber" id="sidebarTasksBadge">12</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-group" style="margin-top: auto;">
+          <div class="nav-group-label">System</div>
+          <ul class="nav-list">
+            <li>
+              <button class="nav-link" id="sidebarSupabaseBtn" style="width: 100%; border: none; text-align: left;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                <span>Supabase Database</span>
+                <span class="nav-badge badge-green" id="sidebarDbBadge" style="display:none;">LIVE</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="exportDataBtn" style="width: 100%; border: none; text-align: left;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Export Backup</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="resetDataBtn" style="width: 100%; border: none; text-align: left;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                  <path d="M21 3v5h-5"></path>
+                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                  <path d="M8 16H3v5"></path>
+                </svg>
+                <span>Reset Demo Data</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="agency-mini-card">
+          <div class="agency-status-row">
+            <span class="status-dot-pulse">
+              <span class="pulse-dot"></span>
+              Workspace Active
+            </span>
+            <span style="font-weight: 700; color: var(--primary);">4 Online</span>
+          </div>
+          <div class="agency-metric-row">
+            Bright Digital Agency HQ
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="search-box">
+            <span class="search-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" class="search-input" id="globalSearchInput" placeholder="Quick search clients, leads, tasks, projects...">
+          </div>
+        </div>
+
+          <!-- Supabase Cloud Connection Status Badge -->
+          <button class="supabase-status-btn unconfigured" id="supabaseHeaderBtn" title="Supabase Cloud Database Settings">
+            <span class="status-indicator-dot" id="supabaseDot"></span>
+            <span id="supabaseStatusLabel">Supabase: Demo Mode</span>
+          </button>
+
+          <!-- Quick Action Dropdown -->
+          <div class="quick-action-menu">
+            <button class="btn-primary" id="quickActionBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>+ Quick Add</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="quickActionDropdown">
+              <button class="dropdown-item" id="quickAddLeadBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <line x1="19" y1="8" x2="19" y2="14"></line>
+                  <line x1="22" y1="11" x2="16" y2="11"></line>
+                </svg>
+                <span>Add Lead</span>
+              </button>
+              <button class="dropdown-item" id="quickAddClientBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                </svg>
+                <span>Add Client</span>
+              </button>
+              <button class="dropdown-item" id="quickAddTaskBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Add Task</span>
+              </button>
+              <button class="dropdown-item" id="quickAddProjectBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Add Project</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Notification Button -->
+          <button class="header-icon-btn" id="notifBtn" title="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge" id="notifBadge">3</span>
+          </button>
+
+          <!-- User Profile -->
+          <div class="header-user-profile">
+            <div class="user-avatar-circle">BA</div>
+            <div class="user-text-info">
+              <span class="user-name">Agency Manager</span>
+              <span class="user-role">Administrator</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- View Container -->
+      <div class="content-body">
+        
+        <!-- ==========================================
+             PAGE 1: DASHBOARD
+             ========================================== -->
+        <section class="page-view active" id="view-dashboard">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Bright Agency Dashboard</h1>
+              <p>Welcome back! Here is an overview of clients, leads, projects, and active tasks.</p>
+            </div>
+            <div class="view-action-group">
+              <button class="btn-secondary" id="dashAddLeadBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Add Lead</span>
+              </button>
+              <button class="btn-secondary" id="dashAddProjectBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Add Project</span>
+              </button>
+              <button class="btn-primary" id="dashAddTaskBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Add Task</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Summary Metric Cards: Total Clients, Active Projects, Total Leads, Pending Tasks, Completed Tasks -->
+          <div class="metrics-grid">
+            <!-- 1. Total Clients -->
+            <div class="metric-card card-primary">
+              <div class="metric-card-top">
+                <span class="metric-label">Total Clients</span>
+                <div class="metric-icon-wrap metric-icon-primary">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value-row">
+                <span class="metric-value" id="statTotalClients">8</span>
+                <span class="metric-badge badge-trend-up">Active</span>
+              </div>
+              <span class="metric-subtext">Total onboarded accounts</span>
+            </div>
+
+            <!-- 2. Active Projects -->
+            <div class="metric-card card-info">
+              <div class="metric-card-top">
+                <span class="metric-label">Active Projects</span>
+                <div class="metric-icon-wrap metric-icon-info">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value-row">
+                <span class="metric-value" id="statActiveProjects">5</span>
+                <span class="metric-badge badge-trend-up">In Flight</span>
+              </div>
+              <span class="metric-subtext">Projects currently progressing</span>
+            </div>
+
+            <!-- 3. Total Leads -->
+            <div class="metric-card card-purple">
+              <div class="metric-card-top">
+                <span class="metric-label">Total Leads</span>
+                <div class="metric-icon-wrap metric-icon-purple">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <line x1="19" y1="8" x2="19" y2="14"></line>
+                    <line x1="22" y1="11" x2="16" y2="11"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value-row">
+                <span class="metric-value" id="statTotalLeads">9</span>
+                <span class="metric-badge badge-trend-neutral">Pipeline</span>
+              </div>
+              <span class="metric-subtext">Inbound agency prospects</span>
+            </div>
+
+            <!-- 4. Pending Tasks -->
+            <div class="metric-card card-warning">
+              <div class="metric-card-top">
+                <span class="metric-label">Pending Tasks</span>
+                <div class="metric-icon-wrap metric-icon-warning">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value-row">
+                <span class="metric-value" id="statPendingTasks">7</span>
+                <span class="metric-badge" style="background:#fffbeb; color:#b45309; border: 1px solid #fde68a;">To Do</span>
+              </div>
+              <span class="metric-subtext">Pending & In Progress</span>
+            </div>
+
+            <!-- 5. Completed Tasks -->
+            <div class="metric-card card-success">
+              <div class="metric-card-top">
+                <span class="metric-label">Completed Tasks</span>
+                <div class="metric-icon-wrap metric-icon-success">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value-row">
+                <span class="metric-value" id="statCompletedTasks">5</span>
+                <span class="metric-badge badge-trend-up">Done</span>
+              </div>
+              <span class="metric-subtext">Successfully delivered</span>
+            </div>
+          </div>
+
+          <!-- Visual Breakdowns: Team Workload & Recent Activity -->
+          <div class="dashboard-grid">
+            <div class="dashboard-card">
+              <div class="card-header-row">
+                <div class="card-header-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg>
+                  <span>Team Workload & Completion Overview</span>
+                </div>
+                <a href="#team" class="card-header-action" onclick="BrightCRM.navigate('team')">View All Members →</a>
+              </div>
+              <div class="team-workload-grid" id="dashboardTeamWorkloadGrid">
+                <!-- Dynamically rendered for Ahmed Raza, Fatima Noor, Ali Hassan, Ayesha Khan -->
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="card-header-row">
+                <div class="card-header-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 14 14"></polyline>
+                  </svg>
+                  <span>Recent Agency Activity</span>
+                </div>
+              </div>
+              <div class="activity-list" id="dashboardActivityList">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Projects Snapshot -->
+          <div class="dashboard-card" style="margin-bottom: 28px;">
+            <div class="card-header-row">
+              <div class="card-header-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span>Active Projects Status</span>
+              </div>
+              <a href="#projects" class="card-header-action" onclick="BrightCRM.navigate('projects')">All Projects →</a>
+            </div>
+            <div class="responsive-table-wrap">
+              <table class="crm-table" id="dashboardProjectsTable">
+                <thead>
+                  <tr>
+                    <th>Project Name</th>
+                    <th>Client</th>
+                    <th>Assigned Team</th>
+                    <th>Deadline</th>
+                    <th>Progress</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboardProjectsTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==========================================
+             PAGE 2: CLIENTS
+             ========================================== -->
+        <section class="page-view" id="view-clients">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Clients Directory</h1>
+              <p>Manage enterprise and SMB client relationships, active retainers, and contracts.</p>
+            </div>
+            <div class="view-action-group">
+              <button class="btn-primary" id="openAddClientModalBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>+ Add Client</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <div class="table-toolbar">
+              <div class="table-filters">
+                <select class="filter-select" id="clientStatusFilter">
+                  <option value="All">All Statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+              <input type="text" class="table-search-input" id="clientSearchInput" placeholder="Search clients, company, email...">
+            </div>
+
+            <div class="responsive-table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Client & Company</th>
+                    <th>Contact Info</th>
+                    <th>Active Projects</th>
+                    <th>Total Value</th>
+                    <th>Status</th>
+                    <th>Joined Date</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="clientsTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==========================================
+             PAGE 3: LEADS
+             ========================================== -->
+        <section class="page-view" id="view-leads">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Leads Pipeline</h1>
+              <p>Track inbound prospects, budgets, follow-up dates, and conversion opportunities.</p>
+            </div>
+            <div class="view-action-group">
+              <button class="btn-primary" id="openAddLeadModalBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>+ Add Lead</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <div class="table-toolbar">
+              <div class="table-filters">
+                <select class="filter-select" id="leadStatusFilter">
+                  <option value="All">All Statuses</option>
+                  <option value="New">New</option>
+                  <option value="Contacted">Contacted</option>
+                  <option value="In Discussion">In Discussion</option>
+                  <option value="Proposal Sent">Proposal Sent</option>
+                  <option value="Won">Won</option>
+                  <option value="Lost">Lost</option>
+                </select>
+                <select class="filter-select" id="leadServiceFilter">
+                  <option value="All">All Services</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="AI Video Production">AI Video Production</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                </select>
+              </div>
+              <input type="text" class="table-search-input" id="leadSearchInput" placeholder="Search leads by name, email, service...">
+            </div>
+
+            <div class="responsive-table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Lead Name</th>
+                    <th>Contact (Email / Phone)</th>
+                    <th>Required Service</th>
+                    <th>Source</th>
+                    <th>Budget</th>
+                    <th>Follow-up Date</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="leadsTableBody">
+                  <!-- Rendered dynamically with all 9 required fields -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==========================================
+             PAGE 4: PROJECTS
+             ========================================== -->
+        <section class="page-view" id="view-projects">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Agency Projects</h1>
+              <p>Monitor project deliverables, deadlines, progress completion, and team allocations.</p>
+            </div>
+            <div class="view-action-group">
+              <button class="btn-primary" id="openAddProjectModalBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>+ Add Project</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container" style="margin-bottom: 24px;">
+            <div class="table-toolbar">
+              <div class="table-filters">
+                <select class="filter-select" id="projectStatusFilter">
+                  <option value="All">All Statuses</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Planning">Planning</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+              <input type="text" class="table-search-input" id="projectSearchInput" placeholder="Search projects by name, client...">
+            </div>
+          </div>
+
+          <div class="projects-grid" id="projectsGridContainer">
+            <!-- Project cards rendered dynamically -->
+          </div>
+        </section>
+
+
+        <!-- ==========================================
+             PAGE 5: TEAM
+             ========================================== -->
+        <section class="page-view" id="view-team">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Agency Team</h1>
+              <p>Bright Digital Agency core creative, development, AI media, and marketing specialists.</p>
+            </div>
+          </div>
+
+          <div class="team-grid" id="teamCardsGrid">
+            <!-- Rendered dynamically for 4 Urdu-named members:
+                 Ahmed Raza (Web Developer), Fatima Noor (UI/UX Designer), 
+                 Ali Hassan (AI Video Creator), Ayesha Khan (Marketing Specialist) -->
+          </div>
+        </section>
+
+
+        <!-- ==========================================
+             PAGE 6: TASKS
+             ========================================== -->
+        <section class="page-view" id="view-tasks">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Task Management</h1>
+              <p>Assigned agency deliverables, status tracker, and team member completion breakdown.</p>
+            </div>
+            <div class="view-action-group">
+              <button class="btn-primary" id="openAddTaskModalBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>+ Add Task</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Team Member Completion & Workload Summary -->
+          <div class="tasks-team-overview">
+            <div class="overview-banner-title">
+              <span>Team Task Completion Metrics</span>
+              <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">Real-time statistics across 4 specialists</span>
+            </div>
+            <div class="members-task-summary-grid" id="tasksMemberSummaryGrid">
+              <!-- Rendered dynamically: total tasks, completed tasks, pending tasks, completion percentage for each member -->
+            </div>
+          </div>
+
+          <!-- 12 Sample Tasks Table -->
+          <div class="table-container">
+            <div class="table-toolbar">
+              <div class="table-filters">
+                <select class="filter-select" id="taskAssigneeFilter">
+                  <option value="All">All Team Members</option>
+                  <option value="Ahmed Raza">Ahmed Raza (Web Dev)</option>
+                  <option value="Fatima Noor">Fatima Noor (UI/UX)</option>
+                  <option value="Ali Hassan">Ali Hassan (AI Video)</option>
+                  <option value="Ayesha Khan">Ayesha Khan (Marketing)</option>
+                </select>
+                <select class="filter-select" id="taskStatusFilter">
+                  <option value="All">All Statuses</option>
+                  <option value="Pending">Pending</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Completed">Completed</option>
+                </select>
+                <select class="filter-select" id="taskPriorityFilter">
+                  <option value="All">All Priorities</option>
+                  <option value="Urgent">Urgent</option>
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                </select>
+              </div>
+              <input type="text" class="table-search-input" id="taskSearchInput" placeholder="Search tasks, project, assignee...">
+            </div>
+
+            <div class="responsive-table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th style="width: 40px;">Done</th>
+                    <th>Task Title</th>
+                    <th>Assigned To</th>
+                    <th>Project</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="tasksTableBody">
+                  <!-- 12 Sample Tasks rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: ADD LEAD
+       Fields: Name, Email, Phone, Required Service, Lead Source, Status, Follow-up Date, Budget, Notes
+       ========================================== -->
+  <div class="modal-overlay" id="addLeadModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Add New Agency Lead</h3>
+        <button class="modal-close-btn" data-close="addLeadModal" aria-label="Close modal">✕</button>
+      </div>
+      <form id="addLeadForm">
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Contact Name <span class="required">*</span></label>
+              <input type="text" name="leadName" class="form-control" placeholder="e.g. Tariq Siddiqui" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" name="leadEmail" class="form-control" placeholder="e.g. client@company.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number <span class="required">*</span></label>
+              <input type="tel" name="leadPhone" class="form-control" placeholder="e.g. +92 321 8849102" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Required Service <span class="required">*</span></label>
+              <select name="leadService" class="form-control" required>
+                <option value="Web Development">Web Development</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="AI Video Production">AI Video Production</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Brand Identity">Brand Identity</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Lead Source <span class="required">*</span></label>
+              <select name="leadSource" class="form-control" required>
+                <option value="Website Contact Form">Website Contact Form</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Referral">Referral</option>
+                <option value="Google Ads">Google Ads</option>
+                <option value="Cold Outreach">Cold Outreach</option>
+                <option value="Instagram">Instagram</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Lead Status <span class="required">*</span></label>
+              <select name="leadStatus" class="form-control" required>
+                <option value="New">New</option>
+                <option value="Contacted">Contacted</option>
+                <option value="In Discussion">In Discussion</option>
+                <option value="Proposal Sent">Proposal Sent</option>
+                <option value="Won">Won</option>
+                <option value="Lost">Lost</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Follow-up Date <span class="required">*</span></label>
+              <input type="date" name="leadFollowUpDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Estimated Budget <span class="required">*</span></label>
+              <input type="text" name="leadBudget" class="form-control" placeholder="e.g. $12,500" required>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Detailed Notes</label>
+              <textarea name="leadNotes" class="form-control" rows="3" placeholder="Project goals, scope notes, tech stack preferences, timeline..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" data-close="addLeadModal">Cancel</button>
+          <button type="submit" class="btn-primary">Save Lead</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: ADD CLIENT
+       ========================================== -->
+  <div class="modal-overlay" id="addClientModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Add New Agency Client</h3>
+        <button class="modal-close-btn" data-close="addClientModal" aria-label="Close modal">✕</button>
+      </div>
+      <form id="addClientForm">
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Contact Person Name <span class="required">*</span></label>
+              <input type="text" name="clientName" class="form-control" placeholder="e.g. David Sterling" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company Name <span class="required">*</span></label>
+              <input type="text" name="clientCompany" class="form-control" placeholder="e.g. Apex Retail Co" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" name="clientEmail" class="form-control" placeholder="e.g. david@apexretail.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number <span class="required">*</span></label>
+              <input type="tel" name="clientPhone" class="form-control" placeholder="e.g. +1 (555) 349-8120" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Industry / Domain</label>
+              <input type="text" name="clientIndustry" class="form-control" placeholder="e.g. E-Commerce / Retail">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Contract Value ($)</label>
+              <input type="number" name="clientTotalSpent" class="form-control" placeholder="e.g. 35000" min="0">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Status <span class="required">*</span></label>
+              <select name="clientStatus" class="form-control" required>
+                <option value="Active">Active</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Joined Date <span class="required">*</span></label>
+              <input type="date" name="clientJoinedDate" class="form-control" required>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Client Notes</label>
+              <textarea name="clientNotes" class="form-control" rows="2" placeholder="Account manager notes, contract deliverables..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" data-close="addClientModal">Cancel</button>
+          <button type="submit" class="btn-primary">Create Client</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: ADD TASK
+       Assigned to one of the 4 Urdu-named members
+       ========================================== -->
+  <div class="modal-overlay" id="addTaskModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Create New Agency Task</h3>
+        <button class="modal-close-btn" data-close="addTaskModal" aria-label="Close modal">✕</button>
+      </div>
+      <form id="addTaskForm">
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label class="form-label">Task Title <span class="required">*</span></label>
+              <input type="text" name="taskTitle" class="form-control" placeholder="e.g. Develop Headless Shopify Cart API" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Assigned Team Member <span class="required">*</span></label>
+              <select name="taskAssignedTo" class="form-control" required id="taskAssigneeSelect">
+                <option value="Ahmed Raza">Ahmed Raza (Web Developer)</option>
+                <option value="Fatima Noor">Fatima Noor (UI/UX Designer)</option>
+                <option value="Ali Hassan">Ali Hassan (AI Video Creator)</option>
+                <option value="Ayesha Khan">Ayesha Khan (Marketing Specialist)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Related Project <span class="required">*</span></label>
+              <select name="taskProject" class="form-control" required id="taskProjectSelect">
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Due Date <span class="required">*</span></label>
+              <input type="date" name="taskDueDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Priority <span class="required">*</span></label>
+              <select name="taskPriority" class="form-control" required>
+                <option value="Urgent">Urgent</option>
+                <option value="High" selected>High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Initial Status <span class="required">*</span></label>
+              <select name="taskStatus" class="form-control" required>
+                <option value="Pending">Pending</option>
+                <option value="In Progress" selected>In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Description / Deliverable Specs</label>
+              <textarea name="taskDescription" class="form-control" rows="3" placeholder="Brief technical or creative requirements..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" data-close="addTaskModal">Cancel</button>
+          <button type="submit" class="btn-primary">Assign Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: ADD PROJECT
+       ========================================== -->
+  <div class="modal-overlay" id="addProjectModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Create New Agency Project</h3>
+        <button class="modal-close-btn" data-close="addProjectModal" aria-label="Close modal">✕</button>
+      </div>
+      <form id="addProjectForm">
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Project Name <span class="required">*</span></label>
+              <input type="text" name="projectName" class="form-control" placeholder="e.g. Apex E-Commerce Redesign" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Client Name <span class="required">*</span></label>
+              <input type="text" name="projectClient" class="form-control" placeholder="e.g. Apex Retail Co" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Category / Service <span class="required">*</span></label>
+              <input type="text" name="projectCategory" class="form-control" placeholder="e.g. Web Dev & UI/UX" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Deadline <span class="required">*</span></label>
+              <input type="date" name="projectDeadline" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Budget</label>
+              <input type="text" name="projectBudget" class="form-control" placeholder="e.g. $25,000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Progress Percentage (%)</label>
+              <input type="number" name="projectProgress" class="form-control" min="0" max="100" value="15">
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Assigned Team Members (Hold Ctrl / Cmd to select multiple)</label>
+              <select name="projectAssignedTeam" class="form-control" multiple size="4" required>
+                <option value="Ahmed Raza" selected>Ahmed Raza (Web Developer)</option>
+                <option value="Fatima Noor" selected>Fatima Noor (UI/UX Designer)</option>
+                <option value="Ali Hassan">Ali Hassan (AI Video Creator)</option>
+                <option value="Ayesha Khan">Ayesha Khan (Marketing Specialist)</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Project Scope & Summary</label>
+              <textarea name="projectDescription" class="form-control" rows="2" placeholder="Scope highlights, deliverables, milestone requirements..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" data-close="addProjectModal">Cancel</button>
+          <button type="submit" class="btn-primary">Create Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: GENERIC DETAILS VIEWER (Lead / Client / Task)
+       ========================================== -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="detailsModalTitle">Item Details</h3>
+        <button class="modal-close-btn" data-close="detailsModal" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="detail-list" id="detailsModalContent">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+      <div class="modal-footer" id="detailsModalFooter">
+        <button type="button" class="btn-secondary" data-close="detailsModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: SUPABASE DATABASE CONFIGURATION & SYNC
+       ========================================== -->
+  <div class="modal-overlay" id="supabaseSettingsModal">
+    <div class="modal-card" style="max-width: 650px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 34px; height: 34px; border-radius: 8px; background: #10b981; display: flex; align-items: center; justify-content: center; color: #fff;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L.362 14.646A.396.396 0 0 0 .68 15.3H10v8.958a.396.396 0 0 0 .716.233l10.922-14.483a.396.396 0 0 0-.318-.654z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin: 0; font-size: 1.1rem;">Supabase Database & Cloud Sync</h3>
+            <p style="margin: 0; font-size: 0.78rem; color: var(--text-muted);">Real-time PostgreSQL connection, credentials, and full data sync</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="supabaseSettingsModal" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Live Connection Status Banner -->
+        <div class="db-status-banner unconfigured" id="dbStatusBanner">
+          <div class="db-status-content">
+            <span class="status-indicator-dot" id="dbModalDot"></span>
+            <div>
+              <div class="db-status-title" id="dbModalStatusTitle">Local Storage Mode</div>
+              <div class="db-status-desc" id="dbModalStatusDesc">Supabase credentials are not configured. Working with local state.</div>
+            </div>
+          </div>
+          <button type="button" class="btn-secondary" id="btnTestSupabase" style="padding: 6px 12px; font-size: 0.78rem;">
+            ⚡ Ping Supabase
+          </button>
+        </div>
+
+        <!-- Credentials Form -->
+        <form id="supabaseConfigForm">
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label class="form-label">Supabase Project URL <span class="required">*</span></label>
+            <input type="url" id="inputSupabaseUrl" class="form-control" placeholder="https://your-project.supabase.co" required>
+            <small style="font-size: 0.72rem; color: var(--text-muted);">Loaded directly from <code style="background: var(--bg-muted); padding: 1px 5px; border-radius: 4px;">.env</code> (SUPABASE_URL). Can also be updated here.</small>
+          </div>
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label class="form-label">Supabase Anon Public API Key <span class="required">*</span></label>
+            <input type="password" id="inputSupabaseAnonKey" class="form-control" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." required>
+            <small style="font-size: 0.72rem; color: var(--text-muted);">Loaded directly from <code style="background: var(--bg-muted); padding: 1px 5px; border-radius: 4px;">.env</code> (SUPABASE_ANON_KEY). Found in Supabase > Project Settings > API.</small>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+            <button type="submit" class="btn-primary" id="btnSaveSupabaseConfig">
+              Save Credentials & Connect
+            </button>
+            <button type="button" class="btn-secondary" id="btnDisconnectSupabase">
+              Disconnect (Use Local)
+            </button>
+          </div>
+        </form>
+
+        <!-- Database Synchronization Section -->
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-top: 16px;">
+          <div style="font-weight: 700; font-size: 0.88rem; margin-bottom: 4px;">Cloud Database Synchronization</div>
+          <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px;">Push your local CRM data to Supabase PostgreSQL, or load live records from Supabase.</p>
+
+          <div class="db-action-buttons">
+            <button type="button" class="btn-primary" id="btnSyncAllToSupabase" style="font-size: 0.82rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span>Seed / Push All to Supabase</span>
+            </button>
+            <button type="button" class="btn-secondary" id="btnPullFromSupabase" style="font-size: 0.82rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Load All from Supabase</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SQL Schema Setup Helper -->
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-top: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; font-size: 0.88rem;">Supabase PostgreSQL Schema Setup</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Ready-to-run schema script in <code>supabase-schema.sql</code></div>
+            </div>
+            <button type="button" class="btn-secondary" id="btnCopySqlSchema" style="padding: 4px 10px; font-size: 0.75rem;">
+              📋 Copy SQL Schema
+            </button>
+          </div>
+          <div class="code-preview-block" id="sqlSchemaPreview">
+-- 1. Create tables: crm_team_members, crm_clients, crm_leads, crm_projects, crm_tasks, crm_activities
+-- 2. Open Supabase Dashboard > SQL Editor > New Query
+-- 3. Paste the complete SQL from supabase-schema.sql and click Run!
+-- All tables and initial seed data will be created instantly.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" data-close="supabaseSettingsModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/env.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
